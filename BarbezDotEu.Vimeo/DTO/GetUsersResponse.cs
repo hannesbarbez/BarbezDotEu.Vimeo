@@ -13,7 +13,7 @@ namespace BarbezDotEu.Vimeo.DTO
     /// <summary>
     /// Implements the query response contract as defined by Vimeo after querying for users.
     /// </summary>
-    public class GetUsersResponse : IHasHttpResponseMessage
+    public class GetUsersResponse : ICanFail
     {
         /// <summary>
         /// Gets or sets the resulting set of <see cref="User"/>s.
@@ -46,7 +46,10 @@ namespace BarbezDotEu.Vimeo.DTO
         public Paging Paging { get; set; }
 
         /// <inheritdoc/>
-        public HttpResponseMessage HttpResponseMessage { get; set; }
+        public HttpResponseMessage FailedResponse { get; set; }
+
+        /// <inheritdoc/>
+        public bool HasFailed => FailedResponse != null;
 
         /// <summary>
         /// Returns this <see cref="GetUsersResponse"/> as collection of <see cref="VideoHostingUser"/>s.
