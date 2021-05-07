@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BarbezDotEu.VideoHost" Version="1.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\BarbezDotEu.Provider\BarbezDotEu.Provider\BarbezDotEu.Provider\BarbezDotEu.Provider.csproj" />
-    <ProjectReference Include="..\..\BarbezDotEu.VideoHost\BarbezDotEu.VideoHost\BarbezDotEu.VideoHost.csproj" />
   </ItemGroup>
 
 </Project>
