@@ -1,12 +1,13 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
-using BarbezDotEu.Provider.Interfaces;
-using BarbezDotEu.VideoHost.DTO;
-using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using BarbezDotEu.Provider.Interfaces;
+using BarbezDotEu.VideoHost.DTO;
+using Newtonsoft.Json;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -19,7 +20,7 @@ namespace BarbezDotEu.Vimeo.DTO
         /// Gets or sets the resulting set of <see cref="User"/>s.
         /// </summary>
         [JsonProperty("data")]
-        public User[] Users { get; set; }
+        public User[] Users { get; set; } = Array.Empty<User>();
 
         /// <summary>
         /// Gets or sets the total number of results.
