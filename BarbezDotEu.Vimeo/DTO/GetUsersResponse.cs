@@ -4,9 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Text.Json.Serialization;
-using BarbezDotEu.Provider.Interfaces;
 using BarbezDotEu.VideoHost.DTO;
 
 namespace BarbezDotEu.Vimeo.DTO
@@ -14,7 +12,7 @@ namespace BarbezDotEu.Vimeo.DTO
     /// <summary>
     /// Implements the query response contract as defined by Vimeo after querying for users.
     /// </summary>
-    public class GetUsersResponse : ICanFail
+    public class GetUsersResponse
     {
         /// <summary>
         /// Gets or sets the resulting set of <see cref="User"/>s.
@@ -45,12 +43,6 @@ namespace BarbezDotEu.Vimeo.DTO
         /// </summary>
         [JsonPropertyName("paging")]
         public Paging Paging { get; set; }
-
-        /// <inheritdoc/>
-        public HttpResponseMessage FailedResponse { get; set; }
-
-        /// <inheritdoc/>
-        public bool HasFailed => FailedResponse != null;
 
         /// <summary>
         /// Returns this <see cref="GetUsersResponse"/> as collection of <see cref="VideoHostingUser"/>s.

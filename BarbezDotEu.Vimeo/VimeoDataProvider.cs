@@ -60,7 +60,7 @@ namespace BarbezDotEu.Vimeo
             request.Headers.Accept.Add(acceptHeader);
             request.Headers.Authorization = this.authorizationHeader;
             var result = await this.Request<GetUsersResponse>(request);
-            return result?.AsVideoHostingUsers();
+            return result.Content?.AsVideoHostingUsers();
         }
     }
 }
