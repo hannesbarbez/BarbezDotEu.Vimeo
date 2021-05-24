@@ -14,7 +14,6 @@ using BarbezDotEu.VideoHost.EqualityComparers;
 using BarbezDotEu.Vimeo.DTO;
 using BarbezDotEu.Vimeo.Interfaces;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace BarbezDotEu.Vimeo
@@ -25,7 +24,7 @@ namespace BarbezDotEu.Vimeo
         private readonly AuthenticationHeaderValue authorizationHeader;
         private readonly MediaTypeWithQualityHeaderValue acceptHeader;
 
-        public VimeoDataProvider(ILogger<IHostedService> logger, IConfiguration configuration, IHttpClientFactory httpClientFactory)
+        public VimeoDataProvider(ILogger logger, IConfiguration configuration, IHttpClientFactory httpClientFactory)
             : base(logger, httpClientFactory)
         {
             this.getUsersRootUrl = configuration["Vimeo:GetUsersUrl"];
