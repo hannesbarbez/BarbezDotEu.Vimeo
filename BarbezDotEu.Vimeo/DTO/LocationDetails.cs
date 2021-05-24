@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -10,34 +10,34 @@ namespace BarbezDotEu.Vimeo.DTO
     /// </summary>
     public class LocationDetails
     {
-        [JsonProperty("formatted_address")]
+        [JsonPropertyName("formatted_address")]
         public string FormattedAddress { get; set; }
 
-        [JsonProperty("latitude")]
+        [JsonPropertyName("latitude")]
         public double? Latitude { get; set; }
 
-        [JsonProperty("longitude")]
+        [JsonPropertyName("longitude")]
         public double? Longitude { get; set; }
 
-        [JsonProperty("city")]
+        [JsonPropertyName("city")]
         public string City { get; set; }
 
-        [JsonProperty("state")]
+        [JsonPropertyName("state")]
         public string State { get; set; }
 
-        [JsonProperty("neighborhood")]
+        [JsonPropertyName("neighborhood")]
         public string Neighborhood { get; set; }
 
-        [JsonProperty("sub_locality")]
+        [JsonPropertyName("sub_locality")]
         public string SubLocality { get; set; }
 
-        [JsonProperty("state_iso_code")]
+        [JsonPropertyName("state_iso_code")]
         public string StateIsoCode { get; set; }
 
-        [JsonProperty("country")]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
 
-        [JsonProperty("country_iso_code")]
+        [JsonPropertyName("country_iso_code")]
         public string CountryIsoCode { get; set; }
     }
 }

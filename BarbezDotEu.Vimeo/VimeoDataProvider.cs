@@ -1,6 +1,13 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Mime;
+using System.Threading.Tasks;
 using BarbezDotEu.Provider;
 using BarbezDotEu.VideoHost.DTO;
 using BarbezDotEu.VideoHost.EqualityComparers;
@@ -9,13 +16,6 @@ using BarbezDotEu.Vimeo.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Mime;
-using System.Threading.Tasks;
 
 namespace BarbezDotEu.Vimeo
 {

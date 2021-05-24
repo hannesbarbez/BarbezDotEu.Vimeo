@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json.Serialization;
 using BarbezDotEu.Provider.Interfaces;
 using BarbezDotEu.VideoHost.DTO;
-using Newtonsoft.Json;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -19,31 +19,31 @@ namespace BarbezDotEu.Vimeo.DTO
         /// <summary>
         /// Gets or sets the resulting set of <see cref="User"/>s.
         /// </summary>
-        [JsonProperty("data")]
+        [JsonPropertyName("data")]
         public User[] Users { get; set; } = Array.Empty<User>();
 
         /// <summary>
         /// Gets or sets the total number of results.
         /// </summary>
-        [JsonProperty("total")]
+        [JsonPropertyName("total")]
         public long Total { get; set; }
 
         /// <summary>
         /// Gets or sets the current page of results.
         /// </summary>
-        [JsonProperty("page")]
+        [JsonPropertyName("page")]
         public long Page { get; set; }
 
         /// <summary>
         /// Gets or sets the number of results per page.
         /// </summary>
-        [JsonProperty("per_page")]
+        [JsonPropertyName("per_page")]
         public long PerPage { get; set; }
 
         /// <summary>
         /// Gets or sets the paging information.
         /// </summary>
-        [JsonProperty("paging")]
+        [JsonPropertyName("paging")]
         public Paging Paging { get; set; }
 
         /// <inheritdoc/>

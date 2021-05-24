@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -10,52 +10,52 @@ namespace BarbezDotEu.Vimeo.DTO
     /// </summary>
     public class Connections
     {
-        [JsonProperty("albums")]
+        [JsonPropertyName("albums")]
         public HttpQueryDefinition Albums { get; set; }
 
-        [JsonProperty("appearances")]
+        [JsonPropertyName("appearances")]
         public HttpQueryDefinition Appearances { get; set; }
 
-        [JsonProperty("channels")]
+        [JsonPropertyName("channels")]
         public HttpQueryDefinition Channels { get; set; }
 
-        [JsonProperty("feed")]
+        [JsonPropertyName("feed")]
         public HttpQueryDefinition Feed { get; set; }
 
-        [JsonProperty("followers")]
+        [JsonPropertyName("followers")]
         public HttpQueryDefinition Followers { get; set; }
 
-        [JsonProperty("following")]
+        [JsonPropertyName("following")]
         public HttpQueryDefinition Following { get; set; }
 
-        [JsonProperty("groups")]
+        [JsonPropertyName("groups")]
         public HttpQueryDefinition Groups { get; set; }
 
-        [JsonProperty("likes")]
+        [JsonPropertyName("likes")]
         public HttpQueryDefinition Likes { get; set; }
 
-        [JsonProperty("membership")]
+        [JsonPropertyName("membership")]
         public HttpQueryDefinition Membership { get; set; }
 
-        [JsonProperty("moderated_channels")]
+        [JsonPropertyName("moderated_channels")]
         public HttpQueryDefinition ModeratedChannels { get; set; }
 
-        [JsonProperty("portfolios")]
+        [JsonPropertyName("portfolios")]
         public HttpQueryDefinition Portfolios { get; set; }
 
-        [JsonProperty("videos")]
+        [JsonPropertyName("videos")]
         public HttpQueryDefinition Videos { get; set; }
 
-        [JsonProperty("shared")]
+        [JsonPropertyName("shared")]
         public HttpQueryDefinition Shared { get; set; }
 
-        [JsonProperty("pictures")]
+        [JsonPropertyName("pictures")]
         public HttpQueryDefinition Pictures { get; set; }
 
-        [JsonProperty("folders_root")]
+        [JsonPropertyName("folders_root")]
         public HttpQueryDefinition FoldersRoot { get; set; }
 
-        [JsonProperty("teams")]
+        [JsonPropertyName("teams")]
         public HttpQueryDefinition Teams { get; set; }
 
     }

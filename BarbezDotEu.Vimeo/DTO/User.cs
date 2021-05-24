@@ -2,7 +2,7 @@
 // Licensed under the GNU General Public License v3.0
 
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -14,42 +14,42 @@ namespace BarbezDotEu.Vimeo.DTO
         /// <summary>
         /// Gets or sets a relative Vimeo URL for the user.
         /// </summary>
-        [JsonProperty("uri")]
+        [JsonPropertyName("uri")]
         public string Uri { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets an absolute URL, potentially an URL directing away from Vimeo.
         /// </summary>
-        [JsonProperty("link")]
+        [JsonPropertyName("link")]
         public string Link { get; set; }
 
-        [JsonProperty("location")]
+        [JsonPropertyName("location")]
         public string Location { get; set; }
 
-        [JsonProperty("gender")]
+        [JsonPropertyName("gender")]
         public string Gender { get; set; }
 
-        [JsonProperty("bio")]
+        [JsonPropertyName("bio")]
         public string Bio { get; set; }
 
-        [JsonProperty("short_bio")]
+        [JsonPropertyName("short_bio")]
         public string ShortBio { get; set; }
 
-        [JsonProperty("created_time")]
+        [JsonPropertyName("created_time")]
         public DateTime CreatedTime { get; set; }
 
         // Skipping "pictures" property because complex object that with time will point to dead assets anyway.
 
-        [JsonProperty("websites")]
+        [JsonPropertyName("websites")]
         public Website[] Websites { get; set; }
 
-        [JsonProperty("metadata")]
+        [JsonPropertyName("metadata")]
         public MetaData MetaData { get; set; }
 
-        [JsonProperty("location_details")]
+        [JsonPropertyName("location_details")]
         public LocationDetails LocationDetails { get; set; }
     }
 }

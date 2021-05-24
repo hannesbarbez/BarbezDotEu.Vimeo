@@ -1,8 +1,8 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
+using System.Text.Json.Serialization;
 using BarbezDotEu.VideoHost.DTO;
-using Newtonsoft.Json;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
@@ -11,19 +11,19 @@ namespace BarbezDotEu.Vimeo.DTO
     /// </summary>
     public class Website
     {
-        [JsonProperty("uri")]
+        [JsonPropertyName("uri")]
         public string Uri { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("link")]
+        [JsonPropertyName("link")]
         public string Link { get; set; }
 
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
         public WebsiteData AsWebsiteData()
