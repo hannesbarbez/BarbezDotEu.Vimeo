@@ -1,2 +1,2 @@
 # BarbezDotEu.Vimeo
-A fast and efficient Vimeo client, but also incomplete.
+A modern, work-in-progress Vimeo client.
