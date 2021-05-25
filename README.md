@@ -1,2 +1,2 @@
 # BarbezDotEu.Vimeo
-A modern, work-in-progress Vimeo client.
+An unofficial, modern, very much work-in-progress client for Vimeo APIs.
