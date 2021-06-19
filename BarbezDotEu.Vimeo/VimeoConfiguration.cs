@@ -9,14 +9,27 @@ namespace BarbezDotEu.Vimeo
     public class VimeoConfiguration
     {
         /// <summary>
-        /// Gets the URL for querying user information.
+        /// Constructs a <see cref="VimeoConfiguration"/>.
         /// </summary>
-        public string GetUsersUrl { get; }
+        /// <param name="getUsersRootUrl">The root URL for querying user information (without actual user info).</param>
+        /// <param name="rateLimitPerMinute">The maximum number of requests per minute.</param>
+        /// <param name="bearerToken">A bearer token to be used in the authentication header for requests.</param>
+        public VimeoConfiguration(string getUsersRootUrl, string rateLimitPerMinute, string bearerToken)
+        {
+            GetUsersRootUrl = getUsersRootUrl;
+            RateLimitPerMinute = rateLimitPerMinute;
+            BearerToken = bearerToken;
+        }
 
         /// <summary>
-        /// Gets maximum number of requests per minute.
+        /// Gets the root URL for querying user information (without actual user info).
         /// </summary>
-        public long RateLimitPerMinute { get; }
+        public string GetUsersRootUrl { get; }
+
+        /// <summary>
+        /// Gets the maximum number of requests per minute.
+        /// </summary>
+        public string RateLimitPerMinute { get; }
 
         /// <summary>
         /// Gets a bearer token to be used in the authentication header for requests.

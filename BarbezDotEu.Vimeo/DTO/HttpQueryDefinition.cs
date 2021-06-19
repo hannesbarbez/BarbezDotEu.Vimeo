@@ -22,6 +22,6 @@ namespace BarbezDotEu.Vimeo.DTO
         [JsonPropertyName("total")]
         public long Total { get; set; }
 
-        // Skipping "Options" property as complex and irrelevant to the planned scopes of this project.
+        // Skipping "Options" property for now.
     }
 }

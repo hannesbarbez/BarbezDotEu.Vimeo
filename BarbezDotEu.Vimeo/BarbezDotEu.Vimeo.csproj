@@ -1,13 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Hannes Barbez</Authors>
+    <Company>Hannes Barbez</Company>
+    <Title>BarbezDotEu.Vimeo</Title>
+    <Product>BarbezDotEu.Vimeo</Product>
+    <PackageId>BarbezDotEu.Vimeo</PackageId>
+    <Copyright>©2021 Hannes Barbez</Copyright>
+    <Version>1.0.0</Version>
+    <Description>An unofficial, modern, very much work-in-progress client for Vimeo APIs.</Description>
+    <PackageTags>basic;polite;Vimeo;integration;third-party integration;provider;barbez</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://barbez.eu</PackageProjectUrl>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <RepositoryUrl>https://github.com/hannesbarbez/BarbezDotEu.Vimeo</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="BarbezDotEu.Provider" Version="2.0.2" />
     <PackageReference Include="BarbezDotEu.VideoHost" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
   </ItemGroup>
-
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
 </Project>
