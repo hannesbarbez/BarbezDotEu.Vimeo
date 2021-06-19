@@ -17,6 +17,9 @@ namespace BarbezDotEu.Vimeo.DTO
         [JsonPropertyName("uri")]
         public string Uri { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
@@ -26,29 +29,53 @@ namespace BarbezDotEu.Vimeo.DTO
         [JsonPropertyName("link")]
         public string Link { get; set; }
 
+        /// <summary>
+        /// Gets or sets the location.
+        /// </summary>
         [JsonPropertyName("location")]
         public string Location { get; set; }
 
+        /// <summary>
+        /// Gets or sets the gender.
+        /// </summary>
         [JsonPropertyName("gender")]
         public string Gender { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bio.
+        /// </summary>
         [JsonPropertyName("bio")]
         public string Bio { get; set; }
 
+        /// <summary>
+        /// Gets or sets the short bio.
+        /// </summary>
         [JsonPropertyName("short_bio")]
         public string ShortBio { get; set; }
 
+        /// <summary>
+        /// Gets or sets the created time.
+        /// </summary>
         [JsonPropertyName("created_time")]
         public DateTime CreatedTime { get; set; }
 
-        // Skipping "pictures" property because complex object that with time will point to dead assets anyway.
+        // Skipping "pictures" property for now.
 
+        /// <summary>
+        /// Gets or sets the websites.
+        /// </summary>
         [JsonPropertyName("websites")]
         public Website[] Websites { get; set; }
 
+        /// <summary>
+        /// Gets or sets the 
+        /// </summary>
         [JsonPropertyName("metadata")]
         public MetaData MetaData { get; set; }
 
+        /// <summary>
+        /// Gets or sets the 
+        /// </summary>
         [JsonPropertyName("location_details")]
         public LocationDetails LocationDetails { get; set; }
     }

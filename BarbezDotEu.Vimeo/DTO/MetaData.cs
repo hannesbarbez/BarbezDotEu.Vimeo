@@ -5,11 +5,17 @@ using System.Text.Json.Serialization;
 
 namespace BarbezDotEu.Vimeo.DTO
 {
+    /// <summary>
+    /// Implements a metadata object according to the interface defined by Vimeo.
+    /// </summary>
     public class MetaData
     {
+        /// <summary>
+        /// Gets or sets the connections.
+        /// </summary>
         [JsonPropertyName("connections")]
         public Connections Connections { get; set; }
 
-        // Skipping "interactions" property because no interest in interacting in the planned scopes.
+        // Skipping "interactions" property for now.
     }
 }
