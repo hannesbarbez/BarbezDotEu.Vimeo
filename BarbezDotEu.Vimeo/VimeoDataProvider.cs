@@ -97,7 +97,7 @@ namespace BarbezDotEu.Vimeo
             }
             catch (JsonException e)
             {
-                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, OtcMarkets sends back XML/HTML responses. Moving on from: {e}");
+                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, Vimeo sends back unexpected XML/HTML responses. Moving on from: {e}");
                 return null;
             }
 }
