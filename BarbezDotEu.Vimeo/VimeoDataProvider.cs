@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Mime;
+using System.Text.Json;
 using System.Threading.Tasks;
 using BarbezDotEu.Provider;
 using BarbezDotEu.VideoHost.DTO;
@@ -89,9 +90,17 @@ namespace BarbezDotEu.Vimeo
             var request = new HttpRequestMessage(HttpMethod.Get, queryUrl);
             request.Headers.Accept.Add(acceptHeader);
             request.Headers.Authorization = new AuthenticationHeaderValue("bearer", this.configuration.BearerToken);
-            var result = await this.Request<GetUsersResponse>(request);
-            return result;
-        }
+            try
+            {
+                var result = await this.Request<GetUsersResponse>(request);
+                return result;
+            }
+            catch (JsonException e)
+            {
+                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, OtcMarkets sends back XML/HTML responses. Moving on from: {e}");
+                return null;
+            }
+}
 
         /// <inheritdoc/>
         public async Task<List<VideoHostingUser>> GetVideoHostingUsersLike(string userQuery)
