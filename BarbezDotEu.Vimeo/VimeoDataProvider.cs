@@ -90,23 +90,28 @@ namespace BarbezDotEu.Vimeo
             var request = new HttpRequestMessage(HttpMethod.Get, queryUrl);
             request.Headers.Accept.Add(acceptHeader);
             request.Headers.Authorization = new AuthenticationHeaderValue("bearer", this.configuration.BearerToken);
-            try
-            {
-                var result = await this.Request<GetUsersResponse>(request);
-                return result;
-            }
-            catch (JsonException e)
-            {
-                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, Vimeo sends back unexpected XML/HTML responses. Moving on from: {e}");
-                return null;
-            }
-}
+            return await this.Request<GetUsersResponse>(request);
+        }
 
         /// <inheritdoc/>
         public async Task<List<VideoHostingUser>> GetVideoHostingUsersLike(string userQuery)
         {
             var result = await GetUsersLike(userQuery);
             return result.Content?.AsVideoHostingUsers();
+        }
+
+        /// <inheritdoc/>
+        protected override Task<PoliteReponse<T>> Request<T>(HttpRequestMessage request, bool retryOnError = true, double waitingMinutesBeforeRetry = 15)
+        {
+            try
+            {
+                return base.Request<T>(request, retryOnError, waitingMinutesBeforeRetry);
+            }
+            catch (JsonException e)
+            {
+                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, Vimeo sends back empty responses. Moving on from: {e}");
+                return null;
+            }
         }
     }
 }
