@@ -77,19 +77,5 @@ namespace BarbezDotEu.Vimeo
             var result = await GetUsersLike(userQuery);
             return result.Content?.AsVideoHostingUsers();
         }
-
-        /// <inheritdoc/>
-        protected override Task<PoliteReponse<T>> Request<T>(HttpRequestMessage request, bool retryOnError = true, double waitingMinutesBeforeRetry = 15)
-        {
-            try
-            {
-                return base.Request<T>(request, retryOnError, waitingMinutesBeforeRetry);
-            }
-            catch (JsonException e)
-            {
-                base.Logger.LogWarning($"An error occurred that we're going to ignore since occasionally, Vimeo sends back empty responses. Moving on from: {e}");
-                return null;
-            }
-        }
     }
 }
