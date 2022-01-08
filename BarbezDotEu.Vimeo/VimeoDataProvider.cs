@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Hannes Barbez. All rights reserved.
 // Licensed under the GNU General Public License v3.0
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -24,42 +23,21 @@ namespace BarbezDotEu.Vimeo
     /// </summary>
     public class VimeoDataProvider : PoliteProvider, IVimeoDataProvider
     {
-        private VimeoConfiguration configuration;
+        private readonly VimeoConfiguration configuration;
         private readonly MediaTypeWithQualityHeaderValue acceptHeader;
-
-        /// <summary>
-        /// Gets the <see cref="VimeoConfiguration"/> this <see cref="VimeoConfiguration"/> uses to communicate to the APIs.
-        /// </summary>
-        private VimeoConfiguration Configuration
-        {
-            get
-            {
-                if (this.configuration == null)
-                {
-                    throw new ApplicationException(
-                        $"An {nameof(VimeoDataProvider)} cannot be used before it is configured. To fix, call the {nameof(VimeoDataProvider)}.{nameof(Configure)} method right after initialization.");
-                }
-
-                return this.configuration;
-            }
-        }
-
-        /// <inheritdoc/>
-        public void Configure(VimeoConfiguration configuration)
-        {
-            this.configuration = configuration;
-            this.SetRateLimitPerMinute(this.configuration.RateLimitPerMinute);
-        }
 
         /// <summary>
         /// Constructs a new <see cref="VimeoDataProvider"/>.
         /// </summary>
         /// <param name="logger">A <see cref="ILogger"/> to use for logging.</param>
         /// <param name="httpClientFactory">The <see cref="IHttpClientFactory"/> to use.</param>
-        public VimeoDataProvider(ILogger logger, IHttpClientFactory httpClientFactory)
+        /// <param name="configuration">The <see cref="VimeoConfiguration"/> to configure this <see cref="IVimeoDataProvider"/> with.</param>
+        public VimeoDataProvider(ILogger logger, IHttpClientFactory httpClientFactory, VimeoConfiguration configuration)
             : base(logger, httpClientFactory)
         {
             this.acceptHeader = new MediaTypeWithQualityHeaderValue(MediaTypeNames.Application.Json);
+            this.configuration = configuration;
+            this.SetRateLimitPerMinute(this.configuration.RateLimitPerMinute);
         }
 
         /// <inheritdoc/>

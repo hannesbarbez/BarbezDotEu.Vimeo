@@ -16,15 +16,6 @@ namespace BarbezDotEu.Vimeo.Interfaces
     public interface IVimeoDataProvider : IPoliteProvider
     {
         /// <summary>
-        /// Configures this <see cref="IVimeoDataProvider"/> so that it can successfully communicate with the Vimeo.com APIs.
-        /// </summary>
-        /// <param name="configuration">The <see cref="VimeoConfiguration"/> to configure this <see cref="IVimeoDataProvider"/> with.</param>
-        /// <remarks>
-        /// Configuration is required before any APIs can be called.
-        /// </remarks>
-        void Configure(VimeoConfiguration configuration);
-
-        /// <summary>
         /// Queries for occurences of users on the video hosting platform likely to correspond to the given list of usernames.
         /// </summary>
         /// <param name="usernames">The users for whom to return likely accounts for.</param>
