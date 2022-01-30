@@ -6,8 +6,8 @@
     <Title>BarbezDotEu.Vimeo</Title>
     <Product>BarbezDotEu.Vimeo</Product>
     <PackageId>BarbezDotEu.Vimeo</PackageId>
-    <Copyright>©2021 Hannes Barbez</Copyright>
-    <Version>3.0.1</Version>
+    <Copyright>©2022 Hannes Barbez</Copyright>
+    <Version>3.0.2</Version>
     <Description>An unofficial, modern, very much work-in-progress client for Vimeo APIs.</Description>
     <PackageTags>basic;polite;Vimeo;integration;third-party integration;provider;barbez</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -21,7 +21,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="BarbezDotEu.Provider" Version="3.0.3" />
+      <PackageReference Include="BarbezDotEu.Provider" Version="3.0.4" />
       <PackageReference Include="BarbezDotEu.VideoHost" Version="1.0.0" />
   </ItemGroup>
 </Project>
