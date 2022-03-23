@@ -14,7 +14,7 @@ namespace BarbezDotEu.Vimeo
         /// <param name="getUsersRootUrl">The root URL for querying user information (without actual user info).</param>
         /// <param name="rateLimitPerMinute">The maximum number of requests per minute.</param>
         /// <param name="bearerToken">A bearer token to be used in the authentication header for requests.</param>
-        public VimeoConfiguration(string getUsersRootUrl, string rateLimitPerMinute, string bearerToken)
+        public VimeoConfiguration(string getUsersRootUrl, long rateLimitPerMinute, string bearerToken)
         {
             GetUsersRootUrl = getUsersRootUrl;
             RateLimitPerMinute = rateLimitPerMinute;
@@ -29,7 +29,7 @@ namespace BarbezDotEu.Vimeo
         /// <summary>
         /// Gets the maximum number of requests per minute.
         /// </summary>
-        public string RateLimitPerMinute { get; }
+        public long RateLimitPerMinute { get; }
 
         /// <summary>
         /// Gets a bearer token to be used in the authentication header for requests.
