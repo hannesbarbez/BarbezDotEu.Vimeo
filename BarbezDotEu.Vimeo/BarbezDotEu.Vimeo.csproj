@@ -6,8 +6,8 @@
     <Title>BarbezDotEu.Vimeo</Title>
     <Product>BarbezDotEu.Vimeo</Product>
     <PackageId>BarbezDotEu.Vimeo</PackageId>
-    <Copyright>©2023 Hannes Barbez</Copyright>
-    <Version>8.0.0</Version>
+    <Copyright>©2024 Hannes Barbez</Copyright>
+    <Version>9.0.0</Version>
     <Description>An unofficial, modern, very much work-in-progress client for Vimeo APIs.</Description>
     <PackageTags>basic;polite;Vimeo;integration;third-party integration;provider;barbez</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,11 +17,15 @@
     <RepositoryUrl>https://github.com/hannesbarbez/BarbezDotEu.Vimeo</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageIconUrl>https://api.nuget.org/v3-flatcontainer/barbezdoteu.twitter/5.0.0/icon</PackageIconUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>ICON.png</PackageIcon>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="BarbezDotEu.Provider" Version="8.0.2" />
+      <PackageReference Include="BarbezDotEu.Provider" Version="9.0.0" />
       <PackageReference Include="BarbezDotEu.VideoHost" Version="3.0.0" />
+      <None Include="..\README.md" Pack="true" PackagePath="\" />
+      <None Include="..\ICON.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
